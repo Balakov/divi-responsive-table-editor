@@ -1,9 +1,9 @@
 <?php
 /**
  * Plugin Name: Responsive Table Editor for Divi
- * Description: A Divi module to preview responsive HTML tables from CSV input (text or uploaded file).
- * Version: 1.4
- * Author: Your Name
+ * Description: A Divi module to preview responsive HTML tables from CSV input.
+ * Version: 1.6
+ * Author: Mike Stimpson
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit;
