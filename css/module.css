@@ -1,0 +1,53 @@
+.rte-responsive-table-wrapper {
+    overflow-x: auto;
+    width: 100%;
+}
+
+.rte-responsive-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    border:none;
+    border-spacing:0;
+    table-layout:auto;
+    margin:0 auto 1rem;
+    color: #111;
+    --even-bg-color:#f9f9f9;
+    --header-background-color: #fc0;
+}
+
+.rte-responsive-table th,
+.rte-responsive-table td {
+    padding: 8px;
+    text-align: left;
+    border: none;
+}
+
+.rte-responsive-table th{
+    background-color: var(--header-background-color);
+}
+
+.rte-responsive-table > :where(tbody.row-striping) > :nth-child(2n) > * {
+  background-color: var(--even-bg-color);
+}
+
+@media screen and (max-width: 600px) {
+    .rte-responsive-table th,
+    .rte-responsive-table td {
+        font-size: 14px;
+    }
+}
+
+/* Default: show all columns */
+table td,
+table th {
+  display: table-cell;
+}
+
+/* On small screens, hide the last column */
+@media (max-width: 600px) {
+  table th:last-child,
+  table td:last-child {
+    display: none;
+  }
+}
