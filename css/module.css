@@ -44,10 +44,11 @@ table th {
   display: table-cell;
 }
 
-/* On small screens, hide the last column */
+/* On small screens, hide the last column
 @media (max-width: 600px) {
   table th:last-child,
   table td:last-child {
     display: none;
   }
 }
+*/
