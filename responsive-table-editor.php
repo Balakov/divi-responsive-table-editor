@@ -17,7 +17,7 @@ function rte_divi_module_setup() {
 add_action( 'et_builder_ready', 'rte_divi_module_setup' );
 
 function rte_divi_enqueue_assets() {
-    wp_enqueue_style( 'rte-style', plugin_dir_url( __FILE__ ) . 'css/module.css' );
+    wp_enqueue_style( 'rte-style', plugin_dir_url( __FILE__ ) . 'css/module.css', array(), filemtime(plugin_dir_path(__FILE__) . 'css/module.css') );
 }
 add_action( 'wp_enqueue_scripts', 'rte_divi_enqueue_assets' );
 add_action( 'admin_enqueue_scripts', 'rte_divi_enqueue_assets' );
