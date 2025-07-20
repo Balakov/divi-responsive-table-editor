@@ -35,13 +35,45 @@ class ResponsiveTableEditor extends ET_Builder_Module {
                 'sanitize_callback' => '__return_null',      // disables HTML filtering
                 'default_on_front' => '',                    // ensures clean output
             ],
+            'pricing_alignment' => [
+                'label'           => esc_html__( 'Pricing Alignment', 'rte-divi' ),
+                'type'            => 'yes_no_button',
+                'option_category' => 'basic_option',
+                'options'         => [
+                    'on'  => esc_html__( 'Yes', 'rte-divi' ),
+                    'off' => esc_html__( 'No', 'rte-divi' ),
+                ],
+                'description'     => esc_html__( 'The first column will be left aligned and the last column will be right-aligned. The last row is treated as a total and will be displayed in a different colour).', 'rte-divi' ),
+                'default'         => 'off',
+            ],
+            'striped_rows' => [
+                'label'           => esc_html__( 'Striped Rows', 'rte-divi' ),
+                'type'            => 'yes_no_button',
+                'option_category' => 'basic_option',
+                'options'         => [
+                    'on'  => esc_html__( 'Yes', 'rte-divi' ),
+                    'off' => esc_html__( 'No', 'rte-divi' ),
+                ],
+                'description'     => esc_html__( 'Odd and even rows will be shown in different colours.', 'rte-divi' ),
+                'default'         => 'off',
+            ],
         ];
     }
 
     function render( $attrs, $content = null, $render_slug ) {
+        $pricing_alignment = $this->props['pricing_alignment'] == 'on';
+        $striped_rows = $this->props['striped_rows'] == 'on';
+        $has_footer = $pricing_alignment;
+
         $csv = strip_tags( $this->props['csv_input'] );
         $lines = preg_split('/\r?\n/', trim($csv));
         $rows = array_map('str_getcsv', $lines);
+
+
+        $table_class_string = 'rte-responsive-table';
+        $table_class_string .= $pricing_alignment == 1 ? ' pricing-alignment' : '';
+        $table_class_string .= $has_footer == 1 ? ' has-footer' : '';
+        $table_class_string .= $striped_rows == 1 ? ' row-striping' : '';
 
         if (empty($rows)) return '';
 
@@ -56,9 +88,8 @@ class ResponsiveTableEditor extends ET_Builder_Module {
 
         // Now echo opening div with proper attributes
         echo "<div $id_attr $class_attr>";
-
         echo '<div class="rte-responsive-table-wrapper">';
-        echo '<table class="rte-responsive-table">';
+        echo '<table class="' . $table_class_string . '">';
         echo '<thead><tr>';
         foreach ($rows[0] as $cell) {
             echo '<th>' . esc_html($cell) . '</th>';

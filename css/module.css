@@ -40,28 +40,29 @@
     background-color: var(--header-background-color);
 }
 
-.responsive_table_editor.row-striping tbody > :nth-child(2n) > * {
+.rte-responsive-table.row-striping tbody > :nth-child(2n) > * {
   background-color: var(--even-bg-color);
 }
 
-.responsive_table_editor.has-footer tbody > tr:last-child > * {
+.rte-responsive-table.has-footer tbody > tr:last-child > * {
   background-color: var(--footer-background-color);
+  font-weight: 700;
 }
 
-.responsive_table_editor.pricing-alignment th:nth-child(1),
-.responsive_table_editor.pricing-alignment td:nth-child(1) {
+.rte-responsive-table.pricing-alignment th:nth-child(1),
+.rte-responsive-table.pricing-alignment td:nth-child(1) {
     text-align: left;
     white-space: wrap;
 }
 
-.responsive_table_editor.pricing-alignment th:nth-child(2),
-.responsive_table_editor.pricing-alignment td:nth-child(2) {
+.rte-responsive-table.pricing-alignment th:nth-child(2),
+.rte-responsive-table.pricing-alignment td:nth-child(2) {
     text-align: right;
     white-space: wrap;
 }
 
-.responsive_table_editor.allow-text-wrap th,
-.responsive_table_editor.allow-text-wrap td {
+.rte-responsive-table.allow-text-wrap th,
+.rte-responsive-table.allow-text-wrap td {
     white-space: wrap;
 }
 

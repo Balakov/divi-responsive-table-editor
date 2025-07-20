@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Responsive Table Editor for Divi
  * Description: A Divi module to preview responsive HTML tables from CSV input.
- * Version: 1.12
+ * Version: 1.13
  * Author: Mike Stimpson
  */
 
