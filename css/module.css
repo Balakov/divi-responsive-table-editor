@@ -66,6 +66,11 @@
     white-space: wrap;
 }
 
+.rte-responsive-table td:empty::before {
+  content: "–";
+  color: inherit;
+}
+
 @media screen and (max-width: 600px) {
     .rte-responsive-table th,
     .rte-responsive-table td {
