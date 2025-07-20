@@ -17,6 +17,7 @@
     --even-bg-color:#f9f9f9;
     --odd-bg-color:#fff;
     --header-background-color: #fc0;
+    --footer-background-color: #d9d9d9;
     line-height: 1.5em;
 }
 
@@ -41,6 +42,27 @@
 
 .responsive_table_editor.row-striping tbody > :nth-child(2n) > * {
   background-color: var(--even-bg-color);
+}
+
+.responsive_table_editor.has-footer tbody > tr:last-child > * {
+  background-color: var(--footer-background-color);
+}
+
+.responsive_table_editor.pricing-alignment th:nth-child(1),
+.responsive_table_editor.pricing-alignment td:nth-child(1) {
+    text-align: left;
+    white-space: wrap;
+}
+
+.responsive_table_editor.pricing-alignment th:nth-child(2),
+.responsive_table_editor.pricing-alignment td:nth-child(2) {
+    text-align: right;
+    white-space: wrap;
+}
+
+.responsive_table_editor.allow-text-wrap th,
+.responsive_table_editor.allow-text-wrap td {
+    white-space: wrap;
 }
 
 @media screen and (max-width: 600px) {
