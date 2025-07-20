@@ -1,6 +1,7 @@
 .rte-responsive-table-wrapper {
     overflow-x: auto;
     width: 100%;
+    font-size: 16px;
 }
 
 .rte-responsive-table {
@@ -12,8 +13,11 @@
     table-layout:auto;
     margin:0 auto 1rem;
     color: #111;
+    overflow-x: scroll;
     --even-bg-color:#f9f9f9;
+    --odd-bg-color:#fff;
     --header-background-color: #fc0;
+    line-height: 1.5em;
 }
 
 .rte-responsive-table th,
@@ -22,13 +26,20 @@
     text-align: center;
     border: none;
     white-space: nowrap;
+    background-color: var(--odd-bg-color);
+}
+
+.rte-responsive-table td:first-child,
+.rte-responsive-table th:first-child {
+    position: sticky;
+    left: 0;
 }
 
 .rte-responsive-table th{
     background-color: var(--header-background-color);
 }
 
-.rte-responsive-table > :where(tbody.row-striping) > :nth-child(2n) > * {
+.responsive_table_editor.row-striping tbody > :nth-child(2n) > * {
   background-color: var(--even-bg-color);
 }
 
